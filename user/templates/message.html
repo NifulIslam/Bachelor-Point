@@ -1,0 +1,23 @@
+{% for msg in message.conversation%}
+    {% if msg.from == message.otherInfo.nid %}
+        <p>{{ msg.message }}</p>
+        <span>{{ msg.time }}</span>
+        <img src="{{message.otherInfo.dp}}" alt="">
+    {% endif %}
+
+    {% if msg.from == message.myInfo.nid %}
+        <p>{{ msg.message }}</p>
+        <span>{{ msg.time }}</span> 
+        <img src="{{message.myInfo.dp}}" alt=""> 
+    {% endif %}
+{% endfor %}
+
+
+<form method="get" action="{% url 'saveMsg'%}">
+    <div class="mf-field">
+        <input type="text" name="message" placeholder="Type a message here">
+        <input type="hidden" name="myNid" value="{{message.myInfo.nid}}">
+        <input type="hidden" name="otherNid" value="{{message.otherInfo.nid}}">
+        <button type="submit">Send</button>
+    </div>
+</form>

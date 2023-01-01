@@ -1,0 +1,9 @@
+{% for i in chatWith%}
+<a href="{% url 'messageOneToOne' %}?email={{i.email}}" class="btn btn-primary">
+    <div class="phone-number phone-number--below">
+        <i  aria-hidden="true"></i> {{i.name}} </span>
+    </div>
+  </a>
+  
+
+{% endfor %}

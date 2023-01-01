@@ -1,3 +1,4 @@
+{{ message.otherInfo.name }}
 {% for msg in message.conversation%}
     {% if msg.from == message.otherInfo.nid %}
         <p>{{ msg.message }}</p>

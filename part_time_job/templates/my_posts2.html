@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{% static 'userStyle/home.css' %}" />
     <!-- <link rel="stylesheet" type="text/css" href="post_show.css" /> -->
     <link rel="stylesheet" href="{% static 'post_show.css' %}" />
-    <title>Part time job</title>
+    <title>My Posts</title>
 
     <style>
       .search input[type=text]{
@@ -47,7 +47,7 @@
       <div class="search">
        <form action="{% url 'part_time_job:Search_job' %}">
            <input type="text"
-               placeholder=" Search Job "
+               placeholder="Search Job"
                name="search">
            <button type="submit">
                <i class="fa fa-search"
@@ -166,7 +166,7 @@
                                    </div> -->
                                 </div>
                                 <div class="timeline-footer">
-                                   <a href="tel:{{ i.contact }}" class="m-r-15 text-inverse-lighter"><i class="fa fa-comments fa-fw fa-lg m-r-3"></i> Contact</a>
+                                 <a href="{% url 'part_time_job:deletePost' %}?id={{i.salary}}" class="m-r-15 text-inverse-lighter">Delete</a>
                                    <!-- <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
                                    <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
                                 </div> -->
